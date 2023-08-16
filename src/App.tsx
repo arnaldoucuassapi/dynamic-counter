@@ -41,15 +41,17 @@ function App() {
   }
 
   return (
-    <div className='flex flex-col justify-between h-[100vh]'>
-      
-      <div className='mt-10'>
-        <h1 className='text-5xl text-blue-600 mb-3 text-center font-extrabold'>Timer Page</h1>
-        <p className='text-center text-2xl'>Esta página estará disponivel brevemente...</p>
-      </div>
+    <div 
+      className='flex flex-col items-center justify-center gap-16 bg-zinc-100 dark:bg-zinc-900 h-screen'
+    >
+      <h1 
+        className='text-6xl font-bold text-center bg-gradient-to-r from-blue-500 to-violet-500 text-transparent bg-clip-text'
+      >
+        Dynamic Counter
+      </h1>
 
 
-      <div className='flex flex-1 justify-center items-center my-16'>
+      <div className='flex justify-center items-center'>
         <BoxTime value={dias} type='dia' />
         <DotSeparator />
         <BoxTime value={horas} type='hora' />
@@ -62,10 +64,10 @@ function App() {
 
       <button 
         onClick={startCountage}
-        className={
-          `${active ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-800 hover:bg-blue-900'} py-3 px-9 rounded-lg shadow-2xl text-lg transition-colors text-zinc-100  w-fit m-auto my-10 relative -top-10`}
+        data-active={active}
+        className='bg-blue-600 py-2 px-8 data-[active=true]:bg-red-600 hover:opacity-75 rounded shadow-md shadow-zinc-900/40 font-semilbold text-lg transition-opacity text-zinc-100'
       >
-        {active ? 'Parar' : 'Iniciar'} contangem
+        {active ? 'Stop' : 'Start'} counter
       </button>
     </div>
   )
