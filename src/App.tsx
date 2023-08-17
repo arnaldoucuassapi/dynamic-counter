@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import { BoxTime } from './components/BoxTime'
 import { DotSeparator } from './components/DotSeparator'
-import { Clock, Moon, Plus, RotateCcw, Settings, Sun } from 'lucide-react'
+import { Moon, RotateCcw, Settings, Sun } from 'lucide-react'
 import { changeDarkMode } from './lib/utils'
-import { Card, CardContent, CardHeader, CardTitle } from './components/ui/card'
 import { Popover, PopoverContent, PopoverTrigger } from './components/ui/popover'
 import { Label } from './components/ui/label'
 import { Input } from './components/ui/input'
-import { Switch } from './components/ui/switch'
 import { Button } from './components/ui/button'
 
 function App() {
@@ -18,7 +15,7 @@ function App() {
 
   // Select theme based in operating system
   useEffect(() => {
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage))) {
       document.documentElement.classList.add('dark');
       setDarkMode(true);
     } else {
@@ -61,10 +58,10 @@ function App() {
   }
 
   function resetCounter() {
-    setDias(0);
-    setHoras(0);
-    setMinutos(0);
-    setSegundos(0);
+    setDays(0);
+    setHours(0);
+    setMinutes(0);
+    setSeconds(0);
   }
 
   return (
@@ -100,31 +97,31 @@ function App() {
                     id="width"
                     className="col-span-2 h-8"
                     type='number'
-                    defaultValue={dias}
+                    defaultValue={days}
                     maxLength={365}
-                    onChange={(event) =>setDias(Number(event.target.value))}
+                    onChange={(event) =>setDays(Number(event.target.value))}
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
                   <Label htmlFor="maxWidth">Hour</Label>
                   <Input
                     id="maxWidth"
-                    defaultValue={horas}
+                    defaultValue={hours}
                     className="col-span-2 h-8"
                     type='number'
                     maxLength={24}
-                    onChange={(event) => setHoras(Number(event.target.value))}
+                    onChange={(event) => setHours(Number(event.target.value))}
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
                   <Label htmlFor="height">Minute</Label>
                   <Input
                     id="height"
-                    defaultValue={minutos}
+                    defaultValue={minutes}
                     className="col-span-2 h-8"
                     type='number'
                     maxLength={60}
-                    onChange={(event) => setMinutos(Number(event.target.value))}
+                    onChange={(event) => setMinutes(Number(event.target.value))}
                   />
                 </div>
                 <div className="grid grid-cols-3 items-center gap-4">
@@ -132,10 +129,10 @@ function App() {
                   <Input
                     id="maxHeight"
                     className="col-span-2 h-8"
-                    defaultValue={segundos}
+                    defaultValue={seconds}
                     type='number'
                     maxLength={60}
-                    onChange={(event) => setSegundos(Number(event.target.value))}
+                    onChange={(event) => setSeconds(Number(event.target.value))}
                   />
                 </div>
               </div>
