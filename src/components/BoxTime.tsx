@@ -1,7 +1,7 @@
 
 interface BoxTimeProps {
   value: number,
-  type: 'dia' | 'hora' | 'minuto' | 'segundo',
+  type: 'day' | 'hour' | 'minute' | 'second',
 }
 
 export function BoxTime({ value, type }: BoxTimeProps) {

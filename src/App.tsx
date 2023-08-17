@@ -7,10 +7,10 @@ function App() {
   
   const [active, setActive] = useState(false)
 
-  const [dias, setDias] = useState<number>(0);
-  const [horas, setHoras] = useState<number>(0);
-  const [minutos, setMinutos] = useState<number>(1);
-  const [segundos, setSegundos] = useState<number>(3);
+  const [days, setDays] = useState<number>(0);
+  const [hours, setHours] = useState<number>(0);
+  const [minutes, setMinutes] = useState<number>(1);
+  const [seconds, setSeconds] = useState<number>(3);
 
   function startCountage() {
     setActive(!active)    
@@ -18,17 +18,17 @@ function App() {
 
   function changeDate() {
     setTimeout(() => {
-      if(segundos >= 1) {
-        setSegundos(segundos - 1)
-      } else if (minutos >= 1){
-        setMinutos(minutos - 1)
-        setSegundos(59)
-      } else if (horas >= 1) {
-        setHoras(horas - 1)
-        setMinutos(59)
-      } else if (dias >= 1) {
-        setDias(dias - 1)
-        setHoras(23)
+      if(seconds >= 1) {
+        setSeconds(seconds - 1)
+      } else if (minutes >= 1){
+        setMinutes(minutes - 1)
+        setSeconds(59)
+      } else if (hours >= 1) {
+        setHours(hours - 1)
+        setMinutes(59)
+      } else if (days >= 1) {
+        setDays(days - 1)
+        setHours(23)
       } else {
         setActive(!active)
       }
@@ -52,13 +52,13 @@ function App() {
 
 
       <div className='flex justify-center items-center'>
-        <BoxTime value={dias} type='dia' />
+        <BoxTime value={days} type='day' />
         <DotSeparator />
-        <BoxTime value={horas} type='hora' />
+        <BoxTime value={hours} type='hour' />
         <DotSeparator />
-        <BoxTime value={minutos} type='minuto' />
+        <BoxTime value={minutes} type='minute' />
         <DotSeparator />
-        <BoxTime value={segundos} type='segundo' />
+        <BoxTime value={seconds} type='second' />
       </div>
 
 
