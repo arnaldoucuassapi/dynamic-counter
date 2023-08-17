@@ -1,6 +1,16 @@
 # Dynamic Counter
 
-![Image Preview](image-preview.png)
+A counter that counts down based on the values ​​chosen by the user, has an interactive interface and has taken accessibility factors into account.
+
+### Features
+
+- Start and stop counter
+- Popover
+- Dark Mode
+- Reset counter
+
+![Image Preview Drak](image-preview-dark.png)
+![Image Preview Light](image-preview-light.png)
 
 ## Technologies Used
 
@@ -8,7 +18,7 @@ The project was developed using the following technologies:
 
 - Programming Language: Typescript
 - [Vite](https://vite.dev/) with React.js
-- [Shadcn UI](https://ui.shadcn.com/)
+- [Shadcn UI](https://ui.shadcn.com/) Components
 - [Tailwind CSS](https://tailwindcss.com) for style
 - [Lucide](https://lucide.dev) for icons
 
